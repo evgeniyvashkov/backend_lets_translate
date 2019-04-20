@@ -1,8 +1,6 @@
 var express = require('express');
 var router = express.Router();
 
-router.get('/', function(req, res, next) {
-  res.send('users page');
-});
+router.get('/', (req, res) => res.send('users page'));
 
 module.exports = router;

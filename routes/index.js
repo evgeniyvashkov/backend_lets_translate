@@ -1,9 +1,9 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+
+const rootPage = (req, res) => res.send('Weclom to my server on port 3001! It works and it fine!');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+router.get('/', rootPage);
 
 module.exports = router;
