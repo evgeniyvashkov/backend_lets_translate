@@ -12,6 +12,7 @@ const tasksRouter = require('./routes/tasks');
 const myCommentsRouter = require('./routes/myComments');
 const newCommentsRouter = require('./routes/newComments');
 const tariffs = require('./routes/tariffs');
+const users = require('./routes/users');
 
 const app = express();
 const port = 3001;
@@ -31,22 +32,22 @@ app.use('/tasks', tasksRouter);
 app.use('/myComments', myCommentsRouter);
 app.use('/newComments', newCommentsRouter);
 app.use('/tariffs', tariffs);
+app.use('/users', users);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
   res.send(500);
 });
 
-app.listen(port, ()=> console.log('server started'))
+app.listen(port, () => console.log('server started'))
 
 module.exports = app;

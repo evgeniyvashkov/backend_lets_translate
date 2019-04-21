@@ -1,6 +1,8 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-router.get('/', (req, res) => res.send('users page'));
+const user = require('../mocks/user.json')
+
+router.get('/', (req, res) => res.json(user));
 
 module.exports = router;
