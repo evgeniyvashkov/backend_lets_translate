@@ -1,7 +1,7 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-var tariffs = require('../mocks/tariffs')
+const tariffs = require('../mocks/tariffs')
 
 router.get('/', (req, res) => res.json(tariffs));
 

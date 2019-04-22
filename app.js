@@ -1,3 +1,4 @@
+require('dotenv').config()
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
@@ -9,15 +10,14 @@ const cors = require('cors');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const tasksRouter = require('./routes/tasks');
-const myCommentsRouter = require('./routes/myComments');
-const newCommentsRouter = require('./routes/newComments');
+const myCommentsRouter = require('./routes/comments/new/comments');
+const newCommentsRouter = require('./routes/comments/my/comments');
 const tariffs = require('./routes/tariffs');
 const users = require('./routes/users');
 
 const app = express();
-const port = 3001;
+const port = process.env.PORT || 3001;
 
-app.set('port', port);
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

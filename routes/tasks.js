@@ -1,7 +1,7 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-var tasksList = require('../mocks/tasks.json')
+const tasksList = require('../mocks/tasks.json')
 
 router.get('/', (req, res) => res.json(tasksList));
 
