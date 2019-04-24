@@ -14,6 +14,7 @@ const myCommentsRouter = require('./routes/comments/new/comments');
 const newCommentsRouter = require('./routes/comments/my/comments');
 const tariffs = require('./routes/tariffs');
 const users = require('./routes/users');
+const taskComment = require('./routes/comments/task/task');
 
 const app = express();
 const port = process.env.PORT || 3001;
@@ -33,6 +34,7 @@ app.use('/myComments', myCommentsRouter);
 app.use('/newComments', newCommentsRouter);
 app.use('/tariffs', tariffs);
 app.use('/users', users);
+app.use('/taskComments', taskComment);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
