@@ -6,12 +6,13 @@ const taskCommentList = require('../../../mocks/taskCommentList.json')
 router.get('/', (req, res) => res.json(taskCommentList));
 
 router.post('/', (req, res) => {
-    console.log(req.body)
+    const { author, message } = req.body;
+
     const newComment = {
-        id : req.body.id,
+        author,
+        message
     };
 
-    console.log(req.body)
     taskCommentList.push(newComment);
 
     res.sendStatus(200)
