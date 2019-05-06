@@ -15,6 +15,7 @@ const newCommentsRouter = require('./routes/comments/my/comments');
 const tariffs = require('./routes/tariffs');
 const users = require('./routes/users');
 const taskComment = require('./routes/comments/task/task');
+const checkboxThemesField = require('./routes/checkboxThemesField')
 
 const app = express();
 const port = process.env.PORT || 3001;
@@ -35,6 +36,7 @@ app.use('/newComments', newCommentsRouter);
 app.use('/tariffs', tariffs);
 app.use('/users', users);
 app.use('/taskComments', taskComment);
+app.use('/checkboxThemesField', checkboxThemesField);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
