@@ -5,6 +5,15 @@ const Test = db.define("test", {
   content: Sequelize.TEXT
 });
 
+const User = db.define("user", {
+  email: Sequelize.STRING,
+  userName: Sequelize.TEXT,
+  cardNumber: Sequelize.STRING,
+  password: Sequelize.STRING
+});
+
+
 module.exports = {
-  Test
+  Test,
+  User
 };
