@@ -25,8 +25,8 @@ const app = express();
 const port = process.env.PORT || 3001;
 
 //Models
-const { db } = require('./db');
-const { User } = require('./models/testModel');
+const { db } = require('./config/db');
+const { User } = require('./models/User');
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -35,7 +35,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 
-//use routs
+//use routs объеденить в один файл и экспортировать сюда
 app.use('/', homeRouter);
 app.use('/users', usersRouter);
 app.use('/tasks', tasksRouter);
@@ -45,6 +45,8 @@ app.use('/tariffs', tariffs);
 app.use('/users', users);
 app.use('/taskComments', taskComment);
 app.use('/checkboxThemesField', checkboxThemesField);
+
+require('./config/passport-config');
 
 //подключение сессии
 app.use(
@@ -61,18 +63,19 @@ app.use(
   })
 )
 
-require('./config/passport-config');
-
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.get('/admin', (req, res) => {
-  res.send('Admin page, brother')
-})
+// require('./config/passport-config');
 
-app.post('/login', (res, req, next) => {
+
+// app.get('/admin', (req, res) => {
+//   res.send('Admin page, brother')
+// })
+
+// app.post('/login', (res, req, next) => {
   
-})
+// })
 
 
 
