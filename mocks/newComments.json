@@ -1,0 +1,38 @@
+[
+    {
+        "commentId": 1,
+        "commentAuthor": "Ivan Abramov",
+        "commentDate": "12.02.2019",
+        "commentToTask": "Task about something intresting"
+    },
+    {
+        "commentId": 2,
+        "commentAuthor": "Daniil Abramov",
+        "commentDate": "12.02.2019",
+        "commentToTask": "Task about something intresting"
+    },
+    {
+        "commentId": 3,
+        "commentAuthor": "Yuri Abramov",
+        "commentDate": "12.02.2019",
+        "commentToTask": "Task about something intresting"
+    },
+    {
+        "commentId": 4,
+        "commentAuthor": "Some Abramov",
+        "commentDate": "12.02.2019",
+        "commentToTask": "Task about something intresting"
+    },
+    {
+        "commentId": 5,
+        "commentAuthor": "Natali Abramova",
+        "commentDate": "12.02.2019",
+        "commentToTask": "Task about something intresting"
+    },
+    {
+        "commentId": 6,
+        "commentAuthor": "Bruce Willis",
+        "commentDate": "12.02.2019",
+        "commentToTask": "Task about something intresting"
+    }
+]
