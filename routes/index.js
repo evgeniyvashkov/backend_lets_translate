@@ -1,9 +1,23 @@
-const express = require('express');
-const router = express.Router();
+const homeRouter = require('./home');
+const usersRouter = require('./users');
+const tasksRouter = require('./tasks');
+const myCommentsRouter = require('./comments/new/comments');
+const newCommentsRouter = require('./comments/my/comments');
+const tariffs = require('./tariffs');
+const users = require('./users');
+const taskComment = require('./comments/task/comments');
+const checkboxThemesField = require('./checkboxThemesField');
 
-const rootPage = (req, res) => res.send('Weclom to my server on port 3001! It works and it fine!');
+const routes = {
+    homeRouter,
+    usersRouter,
+    tasksRouter,
+    myCommentsRouter,
+    newCommentsRouter,
+    tariffs,
+    users,
+    taskComment,
+    checkboxThemesField
+}
 
-/* GET home page. */
-router.get('/', rootPage);
-
-module.exports = router;
+module.exports = routes;

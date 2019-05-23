@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const rootPage = (req, res) => res.send('Weclom to my server on port 3001! It works and it fine!');
+const rootPage = (req, res) => res.send('server is working');
 
 router.get('/', rootPage);
 
