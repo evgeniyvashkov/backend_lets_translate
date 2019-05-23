@@ -16,7 +16,7 @@ router.post('/', (req, res) => {
 
     taskCommentList.push(newComment);
 
-    res.sendStatus(200)
+    return res.sendStatus(200)
 })
 
 module.exports = router;

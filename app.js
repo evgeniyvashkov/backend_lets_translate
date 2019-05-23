@@ -28,21 +28,13 @@ app.use('/users', routes.users);
 app.use('/taskComments', routes.taskComment);
 app.use('/checkboxThemesField', routes.checkboxThemesField);
 
-db.sync({ force: true })
+db.sync()
   .then(() => {
     console.log('Connection has been established succesfully.');
     
-
     app.listen(port, () => console.log(`server started on port ${port}`));
   })
 
   .catch(err => {
     console.error(`Unable to connect to the database: ${err}`);
   });
-
-// DB cinfig for my otehr computers
-// PORT = 3001;
-// DB_NAME = lets_translate_db;
-// DB_USER = postgres;
-// DB_PASSWORD = 1234;
-// DB_HOST = localhost;
