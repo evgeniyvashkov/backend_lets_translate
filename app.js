@@ -27,6 +27,7 @@ app.use('/tariffs', routes.tariffs);
 app.use('/users', routes.users);
 app.use('/taskComments', routes.taskComment);
 app.use('/checkboxThemesField', routes.checkboxThemesField);
+app.use('/login', routes.userRegistration);
 
 db.sync()
   .then(() => {
