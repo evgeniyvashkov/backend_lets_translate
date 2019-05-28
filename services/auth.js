@@ -25,8 +25,8 @@ const signUp = async (payload) => {
         if (user) return { "message": "That email is alreade taken" }
 
         const newUser = await User.create({ email, userName, cardNumber, password: User.generateHash(password) })
-        
-        return geterationToken(newUser.id);
+
+        return { user: newUser, ...geterationToken(newUser.id) }
     }
 
     catch (err) {
