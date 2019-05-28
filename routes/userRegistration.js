@@ -1,24 +1,17 @@
 const express = require('express');
 const router = express.Router();
 const { User, db } = require('../models/User');
+const { signUp } = require('../services/auth')
 
 router.get('/', (req, res) => {
-    res.send(req.body)
+    res.send('123');
 })
 
-router.post('/', (req, res) => {
-    const {
-        email, userName, cardNumber, password, repeatPassword
-    } = req.body;
-
-    User.findOne({ where: { email } })
-        .then(user => {
-            return user ? res.sendStatus(400) : 
-            () => {
-                User.create({ email, userName, cardNumber, password })
-                res.sendStatus(200)
-            };
-        })
+router.post('/', async (req, res) => {
+   
+    const response = await signUp(req.body);
+    console.log('response!!!',response);
+    res.json(response)
 })
 
 module.exports = router;

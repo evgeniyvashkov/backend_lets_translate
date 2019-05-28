@@ -22,11 +22,3 @@ router.post('/', (req, res) => {
 })
 
 module.exports = router;
-
-
-// email: '1@1.ru',
-//             userName: '2',
-//             cardNumber: '3',
-//             password: '4',
-//             repeatPassword: '5',
-//             formValid: false
