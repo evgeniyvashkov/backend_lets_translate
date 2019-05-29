@@ -3,14 +3,15 @@ const jwt = require('jsonwebtoken');
 const { JWT: { live, secret } } = require('../config/auth');
 
 //token generation
-const geterationToken = (id) => {
+const geterationToken = (userId) => {
     const token = jwt.sign({
-        id,
+        userId,
         exp: Math.floor(Date.now() / 1000) + parseInt(live)
     }, secret);
 
     return {
-        "token": "bearer" + token
+        'success': true,
+        'token': 'bearer' + token
     }
 };
 
@@ -22,15 +23,15 @@ const signUp = async (payload) => {
     try {
         const user = await User.findOne({ where: { email } });
 
-        if (user) return { "message": "That email is alreade taken" }
+        if (user) return { 'success': false, 'message': 'That email is alreade taken' }
 
-        const newUser = await User.create({ email, userName, cardNumber, password: User.generateHash(password) })
+        const newUser = await User.create({ email, userName, cardNumber, password: User.generateHash(password) });
 
-        return { user: newUser, ...geterationToken(newUser.id) }
+        return geterationToken(newUser.id);
     }
 
     catch (err) {
-        return { "seccess": false, "message": "Registration failed" }
+        return { 'success': false, 'message': 'Registration failed' }
     }
 }
 
