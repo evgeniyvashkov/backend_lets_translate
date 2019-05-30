@@ -7,6 +7,7 @@ const tariffs = require('./tariffs');
 const users = require('./users');
 const taskComment = require('./comments/task/comments');
 const checkboxThemesField = require('./checkboxThemesField');
+const userRegistration = require('./userRegistration')
 
 const routes = {
     homeRouter,
@@ -17,7 +18,8 @@ const routes = {
     tariffs,
     users,
     taskComment,
-    checkboxThemesField
+    checkboxThemesField,
+    userRegistration
 }
 
 module.exports = routes;
